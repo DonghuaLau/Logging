@@ -45,20 +45,20 @@ int Logging(int level, const char *format, ...)
 	va_start(arglst, format);
 
 	int nb = 0;
-	char logbuf[2048] = {0};
+	char logbuf[LOG_BUF_SIZE] = {0};
 	char timestr[24];
 	switch(level){
 	case E_LOG_ERROR:
-		snprintf(logbuf, 2048, "%s -ERROR- %s\n", gettime(timestr), format);
+		snprintf(logbuf, LOG_BUF_SIZE, "%s -ERROR- %s\n", gettime(timestr), format);
 		break;
 	case E_LOG_WARNNING:
-		snprintf(logbuf, 2048, "%s -WARNNING- %s\n", gettime(timestr), format);
+		snprintf(logbuf, LOG_BUF_SIZE, "%s -WARNNING- %s\n", gettime(timestr), format);
 		break;
 	case E_LOG_INFO:
-		snprintf(logbuf, 2048, "%s -INFO- %s\n", gettime(timestr), format);
+		snprintf(logbuf, LOG_BUF_SIZE, "%s -INFO- %s\n", gettime(timestr), format);
 		break;
 	case E_LOG_DEBUG:
-		snprintf(logbuf, 2048, "%s -DEBUG- %s\n", gettime(timestr), format);
+		snprintf(logbuf, LOG_BUF_SIZE, "%s -DEBUG- %s\n", gettime(timestr), format);
 		break;
 	default:
 		break;

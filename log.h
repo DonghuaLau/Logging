@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 
+#define LOG_BUF_SIZE 2048
 enum E_LOG_LEVEL
 {
 	E_LOG_ERROR = 0,
